@@ -1,0 +1,32 @@
+﻿@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@model Dictionary<string, List<(string contributor, string data)>>
+@inject Volo.Abp.AspNetCore.Mvc.UI.Theming.ITheme Theme
+
+@{
+    Layout = Theme.GetEmptyLayout();
+    var index = 0;
+}
+@foreach (var i in Model)
+{
+    <h3>Image @(++index) @i.Key</h3>
+
+    <abp-row>
+        @foreach (var valueTuple in i.Value)
+        {
+            <abp-column size="_6">
+
+                <h4>@valueTuple.contributor</h4>
+                <img src="data:image/gif;base64,@valueTuple.data" alt="@valueTuple.contributor"/>
+
+            </abp-column>
+        }
+    </abp-row>
+
+
+    <hr/>
+}
+
+<script>
+var container = document.querySelector('.container');
+container.style.maxWidth = '100%';
+</script>

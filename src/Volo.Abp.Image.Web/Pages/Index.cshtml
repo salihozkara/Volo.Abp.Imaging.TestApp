@@ -1,0 +1,33 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.Image.Localization
+@using Volo.Abp.Users
+@model Volo.Abp.Image.Web.Pages.IndexModel
+@inject IHtmlLocalizer<ImageResource> L
+@inject ICurrentUser CurrentUser
+
+@section styles {
+    <abp-style src="/Pages/Index.css"/>
+}
+
+@section scripts {
+    <abp-script src="/Pages/Index.js"/>
+}
+
+<div class="container">
+    <h1>Resize</h1>
+    <form enctype="multipart/form-data" asp-page-handler="Resize">
+        <abp-input asp-for="File"></abp-input>
+        <abp-button type="submit" button-type="Primary" accept="image/*">Resize</abp-button>
+    </form>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <h1>Compress</h1>
+    <form enctype="multipart/form-data" asp-page-handler="Compress">
+        <abp-input asp-for="File" accept="image/*"></abp-input>
+        <abp-button type="submit" button-type="Primary">Compress</abp-button>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <OutputType>Library</OutputType>
+        <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.1.0" />
+      <PackageReference Include="Volo.Abp.Autofac" Version="7.2.1" />
+      <PackageReference Include="Volo.Abp.BackgroundJobs.Abstractions" Version="7.2.1" />
+      <PackageReference Include="Volo.Abp.Core" Version="7.2.1" />
+      <PackageReference Include="Volo.Abp.VirtualFileSystem" Version="7.2.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Volo.Abp.Image.Abstractions\Volo.Abp.Image.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>
